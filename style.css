@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'M PLUS 1p', Arial, sans-serif;
     background-color: #f3f4f6;
     display: flex;
     align-items: center;
@@ -19,11 +19,12 @@ body {
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    padding: 24px;
+    width: 600px;
+    padding: 20px;
     text-align: center;
     transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+    aspect-ratio: 2 / 1;
   }
   
   .business-card:hover {
@@ -31,8 +32,8 @@ body {
   }
   
   .avatar {
-    width: 96px;
-    height: 96px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto 16px;
     border-radius: 50%;
     overflow: hidden;
@@ -55,7 +56,7 @@ body {
     font-size: 16px;
     color: #6b7280;
     margin: 0 0 16px;
-  } 
+  }
   
   .social-links {
     margin-top: 16px;
@@ -64,13 +65,28 @@ body {
     gap: 16px;
   }
   
-  .social-icon {
-    width: 32px;
-    height: 32px;
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #374151;
+    font-size: 16px;
   }
   
-  .social-icon img {
-    width: 100%;
-    height: 100%;
+  .social-link img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .social-link img:hover {
+    opacity: 1;
   }
   
+  .social-link:hover {
+    color: #5676cd;
+  }  
