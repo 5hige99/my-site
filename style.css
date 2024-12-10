@@ -1,8 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: 'M PLUS 1p', Arial, sans-serif;
@@ -30,6 +31,17 @@ body {
   transition: box-shadow 0.3s ease;
   box-sizing: border-box;
   aspect-ratio: 2 / 1;
+  /* Safariの互換性を確保するために明示的に高さを指定 */
+  height: calc(540px / 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Safari対策 */
+  -webkit-flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-between;
 }
 
 .business-card:hover {
@@ -49,6 +61,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; /* Safariの余白防止 */
 }
 
 .name {
@@ -68,6 +81,10 @@ body {
   display: flex;
   justify-content: center;
   gap: 16px;
+
+  /* Safari向けのプレフィックス */
+  -webkit-justify-content: center;
+  -webkit-gap: 16px;
 }
 
 .social-link {
@@ -86,6 +103,9 @@ body {
   opacity: 0.3;
   transition: opacity 0.3s ease;
   flex-shrink: 0;
+
+  /* Safariの余計な隙間を防止 */
+  display: block;
 }
 
 .social-link img:hover {
@@ -102,8 +122,9 @@ body {
     max-width: 400px;
     min-width: 300px;
     padding: 16px;
-    aspect-ratio: 2 / 1;
-    box-sizing: border-box;
+
+    /* aspect-ratioの代替 */
+    height: auto;
   }
 
   .avatar {
@@ -136,7 +157,9 @@ body {
     max-width: 360px;
     min-width: 280px;
     padding: 12px;
-    aspect-ratio: 2 / 1;
+
+    /* aspect-ratioの代替 */
+    height: auto;
   }
 
   .avatar {
