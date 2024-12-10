@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
 }
 
 .main-container {
@@ -20,6 +22,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 100vw;
 }
 
 .business-card {
@@ -28,13 +31,13 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 540px;
-  padding: 24px;
+  padding: 24px 16px;
   text-align: center;
   transition: box-shadow 0.3s ease;
-}
-
-.business-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 .avatar {
@@ -44,6 +47,7 @@ body {
   border-radius: 50%;
   overflow: hidden;
   background-color: #e5e7eb;
+  flex-shrink: 0;
 }
 
 .avatar img {
@@ -57,30 +61,38 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin: 0 0 8px;
+  width: 100%;
 }
 
 .title {
   font-size: 16px;
   color: #6b7280;
   margin: 0 0 20px;
+  width: 100%;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
+  width: 100%;
+  padding: 0 16px;
+  flex-wrap: wrap;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 .social-link img {
-  width: 24px;
-  height: 24px;
+  width: 100%;
+  height: 100%;
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
@@ -90,8 +102,12 @@ body {
 }
 
 @media (max-width: 480px) {
+  .main-container {
+    padding: 12px;
+  }
+
   .business-card {
-    padding: 20px;
+    padding: 20px 12px;
   }
 
   .avatar {
@@ -111,17 +127,22 @@ body {
 
   .social-links {
     gap: 16px;
+    padding: 0 8px;
   }
 
-  .social-link img {
+  .social-link {
     width: 22px;
     height: 22px;
   }
 }
 
 @media (max-width: 360px) {
+  .main-container {
+    padding: 8px;
+  }
+
   .business-card {
-    padding: 16px;
+    padding: 16px 8px;
   }
 
   .avatar {
@@ -139,9 +160,10 @@ body {
 
   .social-links {
     gap: 12px;
+    padding: 0 4px;
   }
 
-  .social-link img {
+  .social-link {
     width: 20px;
     height: 20px;
   }
