@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  font-family: 'M PLUS 1p', Arial, sans-serif;
+  font-family: 'M PLUS 1p', 'Noto Sans JP', Arial, sans-serif;
   background-color: #f3f4f6;
   display: flex;
   align-items: center;
@@ -28,14 +28,9 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 540px;
-  padding: 20px;
+  padding: 24px;
   text-align: center;
   transition: box-shadow 0.3s ease;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .business-card:hover {
@@ -45,7 +40,7 @@ body {
 .avatar {
   width: 150px;
   height: 150px;
-  margin: 0 auto 16px;
+  margin: 0 auto 20px;
   border-radius: 50%;
   overflow: hidden;
   background-color: #e5e7eb;
@@ -67,45 +62,64 @@ body {
 .title {
   font-size: 16px;
   color: #6b7280;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
-  width: 100%;
+  gap: 20px;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #374151;
-  font-size: 16px;
 }
 
 .social-link img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.3;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
   transition: opacity 0.3s ease;
-  flex-shrink: 0;
-  display: block;
 }
 
-.social-link img:hover {
+.social-link:hover img {
   opacity: 1;
 }
 
-.social-link:hover {
-  color: #5676cd;
+@media (max-width: 480px) {
+  .business-card {
+    padding: 20px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 16px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .title {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .social-links {
+    gap: 16px;
+  }
+
+  .social-link img {
+    width: 22px;
+    height: 22px;
+  }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 360px) {
   .business-card {
     padding: 16px;
   }
@@ -120,51 +134,15 @@ body {
   }
 
   .title {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .social-links {
     gap: 12px;
   }
 
-  .social-link {
-    font-size: 14px;
-  }
-
   .social-link img {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-@media (max-width: 375px) {
-  .business-card {
-    padding: 12px;
-  }
-
-  .avatar {
-    width: 80px;
-    height: 80px;
-  }
-
-  .name {
-    font-size: 18px;
-  }
-
-  .title {
-    font-size: 12px;
-  }
-
-  .social-links {
-    gap: 8px;
-  }
-
-  .social-link {
-    font-size: 12px;
-  }
-
-  .social-link img {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 }
